@@ -71,7 +71,21 @@ myGroup [] = []
 myGroup (x:xs) = (x : takeWhile (==x) xs) : pack (dropWhile (==x) xs)
 
 --P12 Implement the partition function
---myPartition f (x:xs) = (takewhile f xs) : myPartition  
+myPartition f xs = (first,second)
+     where first = [x | x <-xs, f x == True]
+           second = [x | x<-xs, f x == False]
+
+--P13 split
+
+--P14 qsort
+qsort [] = []
+qsort (h:t) = (qsort [x| x<-t, x < h]) ++ [h] ++ (qsort [x| x<-t, x>=h ])
+
+
+--P26 combination
+combinations 0 _  = [ [] ]
+combinations n xs = [ y:ys | y:xs' <- tails xs
+                           , ys <- combinations (n-1) xs']
 
 --P27
 combination 0 xs     = [([],xs)]

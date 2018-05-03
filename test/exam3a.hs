@@ -1,5 +1,5 @@
--- Sample answers for Exam 3a
-import Parsing
+import Parsing   {-- Hutton's Parsing Library: Parsing.hs --}
+import Data.List (elemIndex)
 import Data.Char
     
 ------------------------------------------------------------------------
